@@ -1,0 +1,146 @@
+body
+{
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+#main
+{
+	min-width: 600px;
+	max-width: 800px;
+	padding: 2%;
+	margin: auto;
+}
+
+#gallery
+{
+	border: 2px solid black;
+	background-color: rgb(0,0,0); /* Black fallback color */
+	background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+.image
+{
+	height: 100%;
+	cursor: pointer;
+}
+
+#preview
+{
+	position: relative;
+	display: block;
+	height: 400px;
+}
+
+.enlarged
+{
+	height: auto;
+	width: auto;
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.center-align
+{
+	position: absolute;
+    top: 0;
+	bottom: 0;
+    left: 0;
+	right: 0;
+	margin: auto;
+}
+
+#thumbnail-bar
+{
+	display: table;
+	border-top: 2px solid black;
+	height: 80px;
+}
+
+#thumbnail-bar img
+{
+	display: inline;
+	width: 16.52%; /* ~[(100%/6) - (left border)] */
+}
+
+#thumbnail-bar img+img /* for every img element that has another one before it (=> excludes the first img element) */
+{
+	border-left: 1px solid black;
+}
+
+.tinted
+{
+	/*opacity: 0.6;*/
+	filter: brightness(50%);
+	transition: 0.2s;
+}
+
+.tinted:hover,
+.tinted:focus
+{
+	/*opacity: 0.8;*/
+	filter: brightness(90%);
+}
+
+/* The Modal (background) */
+.modal-box
+{
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* The Close Button */
+.modal-close
+{
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: white;
+	font-size: 3.5em;
+	font-weight: bold;
+	transition: 0.2s;
+}
+
+.modal-close:hover,
+.modal-close:focus
+{
+	color: gray;
+	cursor: pointer;
+}
+
+/* Modal Content (Image) */
+#modal-img
+{
+	cursor: default;
+}
+
+.modal-content
+{
+	margin: auto;
+	display: block;
+	max-width: 90%;
+	background-color: rgb(255,255,255); /* White fallback color */
+	background-color: rgba(255,255,255,0.5); /* White w/ opacity */
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content
+{
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+	from { transform:scale(0) }
+	to { transform:scale(1) }
+}
